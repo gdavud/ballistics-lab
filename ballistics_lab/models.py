@@ -32,11 +32,19 @@ class Trajectory:
     vy: np.ndarray
 
     @property
+    def apex(self) -> float:
+        return float(np.max(self.y))
+
+    @property
+    def has_impact(self) -> bool:
+        return bool(np.any(self.y < 0.0))
+
+    @property
     def impact_index(self) -> int:
         below = np.where(self.y < 0.0)[0]
         if len(below) == 0:
             return len(self.y) - 1
-        return max(0, below[0])
+        return int(below[0])
 
     def clipped(self) -> "Trajectory":
         idx = self.impact_index + 1

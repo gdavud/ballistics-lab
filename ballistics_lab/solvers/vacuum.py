@@ -7,7 +7,7 @@ from ballistics_lab.models import LaunchState, Environment, Trajectory
 from ballistics_lab.solvers.base import TrajectorySolver
 
 
-class VacuumBallisticSolver(TrajectorySolver):
+class VacuumTrajectorySolver(TrajectorySolver):
     def solve(
         self,
         launch: LaunchState,

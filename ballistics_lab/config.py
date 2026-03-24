@@ -27,20 +27,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--tmax",
         type=float,
-        default=20.0,
+        default=120.0,
         help="Max simulation time [s]",
     )
     parser.add_argument(
         "--dt",
         type=float,
-        default=0.01,
+        default=0.001,
         help="Time step [s]",
-    )
-
-    parser.add_argument(
-        "--plot-velocity",
-        action="store_true",
-        help="Also plot velocity/speed time series",
     )
 
     return parser
